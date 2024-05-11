@@ -1,18 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Room, RoomList } from './rooms';
 import { CommonModule } from '@angular/common';
+import { RoomsListComponent } from "../rooms-list/rooms-list.component";
 
 @Component({
-  selector: 'app-rooms',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './rooms.component.html',
-  styleUrl: './rooms.component.scss'
+    selector: 'app-rooms',
+    standalone: true,
+    templateUrl: './rooms.component.html',
+    styleUrl: './rooms.component.scss',
+    imports: [CommonModule, RoomsListComponent]
 })
-export class RoomsComponent {
+export class RoomsComponent implements OnInit{
+ 
 
-  roomList : RoomList[] = 
 
+
+ roomList: RoomList[] = [];
+
+  ngOnInit(): void { 
+
+    this.roomList = 
+    
 [
   {
     roomNumber:1,
@@ -66,6 +74,7 @@ export class RoomsComponent {
     rating: 0.1
   }
 ]
+  }
 
 
   hotelName: string = "Hotel Kamau";
@@ -82,6 +91,11 @@ export class RoomsComponent {
   toggle():boolean{
 
     return this.hideRooms = !this.hideRooms;
+  }
+
+
+  roomSelected(){
+    
   }
   
 
