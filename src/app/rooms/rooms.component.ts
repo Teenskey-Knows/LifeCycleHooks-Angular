@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Room, RoomList } from './rooms';
 import { CommonModule } from '@angular/common';
 import { RoomsListComponent } from "../rooms-list/rooms-list.component";
+import { Event } from '@angular/router';
 
 @Component({
     selector: 'app-rooms',
@@ -94,8 +95,10 @@ export class RoomsComponent implements OnInit{
   }
 
 
-  roomSelected(){
-    
+  roomSelected(room: RoomList ){
+
+  console.log(room);
+      
   }
   
 
